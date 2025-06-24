@@ -2,36 +2,23 @@ package task4;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 
 @Configuration
+@PropertySource("classpath:hikari.properties")
 public class ConnectionsConfig {
+    @Value("${db.url}")
     public String jdbcUrl;
+    @Value("${db.user}")
     public String userName;
+    @Value("${db.password}")
     public String password;
-
-    public ConnectionsConfig() {
-        getConfig();
-    }
-
-    private void getConfig() {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream("src/main/resources/hikari.properties"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        jdbcUrl = properties.getProperty("jdbc.url");
-        userName = properties.getProperty("jdbc.user");
-        password = properties.getProperty("jdbc.password");
-    }
 
     @Bean
     public DataSource dataSource() {
