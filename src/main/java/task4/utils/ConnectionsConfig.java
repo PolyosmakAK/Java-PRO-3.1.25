@@ -1,4 +1,4 @@
-package task4;
+package task4.utils;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -11,13 +11,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:hikari.properties")
+@PropertySource("classpath:application.yml")
 public class ConnectionsConfig {
-    @Value("${db.url}")
+    @Value("${spring.datasource.hikari.jdbc-url}")
     public String jdbcUrl;
-    @Value("${db.user}")
+    @Value("${spring.datasource.hikari.username}")
     public String userName;
-    @Value("${db.password}")
+    @Value("${spring.datasource.hikari.password}")
     public String password;
 
     @Bean
