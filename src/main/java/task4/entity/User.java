@@ -15,9 +15,9 @@ import lombok.Setter;
 public class User {
     @Id
     @Column(name = "id")
-    Long id;
+    private Long id;
     @Column(name = "username")
-    String username;
+    private String username;
 
     @Override
     public String toString() {
