@@ -1,5 +1,8 @@
 server:
   port: 7979
+  servlet:
+    context-path: "/products"
+
 spring:
   datasource:
     hikari:
@@ -12,4 +15,4 @@ spring:
     hibernate:
       ddl-auto: none
   liquibase:
-    change-log: db.migration/v1_users_table.sql
+    change-log: db.migration/v2_users_table.sql

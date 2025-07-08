@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -18,6 +20,8 @@ public class User {
     Long id;
     @Column(name = "username")
     String username;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Product> products;
 
     @Override
     public String toString() {
