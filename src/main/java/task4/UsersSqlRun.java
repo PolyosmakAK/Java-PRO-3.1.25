@@ -17,8 +17,12 @@ public class UsersSqlRun implements CommandLineRunner {
     @Override
     public void run(String... args) {
         log.info("Started");
+
+        //Получение юзера по Id
         log.info("User by id 1 {}", userService.getUser(1L).toString());
+        // Создание юзера
         userService.createUser(new User(4L, "Andrey"));
+        // Удаление юзера
         userService.deleteUser(4L);
     }
 }
