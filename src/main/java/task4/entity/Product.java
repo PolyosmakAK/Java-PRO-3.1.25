@@ -1,8 +1,10 @@
 package task4.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
+@Getter
 @Table(name = "products")
 public class Product {
     @Id

@@ -20,4 +20,5 @@ VALUES (1, 'Вася'),
        (3, 'Петя');
 
 INSERT INTO products(id, account_number, balance, product_type, user_id)
-VALUES (1, '1234-er', 500, 'CARD', 1);
+VALUES (1, '1234-er', 500, 'CARD', 1),
+       (2, '6677889900', 99800, 'CARD', 1);

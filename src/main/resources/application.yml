@@ -1,7 +1,5 @@
 server:
   port: 7979
-  servlet:
-    context-path: "/products"
 
 spring:
   datasource:
