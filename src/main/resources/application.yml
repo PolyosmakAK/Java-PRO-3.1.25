@@ -1,5 +1,6 @@
 server:
   port: 7979
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/
@@ -11,4 +12,4 @@ spring:
     hibernate:
       ddl-auto: none
   liquibase:
-    change-log: db.migration/v1_users_table.sql
+    change-log: db.migration/v2_users_table.sql
