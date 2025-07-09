@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
@@ -17,9 +15,9 @@ import java.util.List;
 public class User {
     @Id
     @Column(name = "id")
-    Long id;
+    private Long id;
     @Column(name = "username")
-    String username;
+    private String username;
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Product> products;
 
